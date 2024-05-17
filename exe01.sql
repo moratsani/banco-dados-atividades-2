@@ -24,11 +24,9 @@ poderdefesa BIGINT,
 genero VARCHAR(255),
 tb_classes_id BIGINT,
 PRIMARY KEY(id),
+CONSTRAINT fk_personagens_classes
 FOREIGN KEY (tb_classes_id) REFERENCES tb_classes(id)
 );
-
-ALTER TABLE tb_personagens ADD CONSTRAINT fk_personagens_classes
-FOREIGN KEY (tb_classes_id) REFERENCES tb_classes(id);
 
 -- Insira 5 registros na tabela tb_classes.
 INSERT INTO tb_classes(nomeclasse, raca)
